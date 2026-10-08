@@ -1,0 +1,28 @@
+<!DOCTYPE html>a
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Meva App</title>
+</head>
+<body>
+  <h1>La Meva App</h1>
+  <p>La meva primera aplicació!</p>
+
+  <input type="text" id="text" placeholder="Escriu alguna cosa">
+  <button onclick="guardar()">Guardar</button>
+
+  <p id="resultat"></p>
+
+  <script>
+    document.getElementById("resultat").textContent =
+      localStorage.getItem("dada") || "";
+
+    function guardar() {
+      const valor = document.getElementById("text").value;
+      localStorage.setItem("dada", valor);
+      document.getElementById("resultat").textContent = valor;
+    }
+  </script>
+</body>
+</html>
